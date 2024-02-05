@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+    <script src="/Primaria/node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <input id="signup_toggle" type="checkbox">
+        <form class="form">
+            <div class="form_front">
+                <div class="form_details">Login</div>
+                <input type="text" class="input" placeholder="Username" id="user-login">
+                <input type="text" class="input" placeholder="Password" id="clave-login">
+                <button class="btn" id="btn-login" onclick="login()">Login</button>
+                <span class="switch">Don't have an account?
+                    <label for="signup_toggle" class="signup_tog">
+                        Sign Up
+                    </label>
+                </span>
+            </div>
+            <div class="form_back">
+                <div class="form_details">SignUp</div>
+                <input type="text" class="input" placeholder="Usuario" id="nickname">
+                <input type="text" class="input" placeholder="Nombre" id="nombre">
+                <input type="text" class="input" placeholder="Apellido Paterno" id="apellidoP">
+                <input type="text" class="input" placeholder="Apellido Materno" id="apellidoM">
+                <input type="text" class="input" placeholder="Correo" id="correo">
+                <input type="text" class="input" placeholder="Password" id="clave">
+                <button class="btn" id="btn-registrar">Signup</button>
+                <span class="switch">Already have an account?
+                    <label for="signup_toggle" class="signup_tog">
+                        Sign In
+                    </label>
+                </span>
+            </div>
+        </form>
+    </div>
+    <script src="./login.js"></script>
+    <link rel="stylesheet" >
+</body>
+
+</html>
