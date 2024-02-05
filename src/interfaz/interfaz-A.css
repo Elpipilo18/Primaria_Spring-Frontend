@@ -1,0 +1,156 @@
+body{
+    margin: 0% 0%;
+    background-color: beige;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #111111;
+    background-image: linear-gradient(
+      32deg,
+      rgba(8, 8, 8, 0.74) 30px,
+      transparent
+    );
+    background-size: 60px 60px;
+    background-position: -5px -5px;
+  }
+  
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    color: aliceblue;
+    font-size: 20px;
+    width: auto;
+    height: 100px;
+    margin: 0px;
+    
+}
+.logo-nb{
+    display: flex;
+    align-items: baseline;
+    padding-right: 550px;
+   
+}
+.logo-nb a{
+    color: white;
+    text-decoration: none;
+    text-align: start;
+   
+
+}
+ ul a{
+    color: aliceblue;
+    text-decoration: none;
+    border: 2px;
+  
+    margin: 20px;
+    
+}
+
+.div-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-encabezado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.div-encabezado div{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 140px;
+    height: 90px;
+    padding: 10px;
+    
+    
+}
+.div-encabezado .E1{
+    background-color: rgba(102, 102, 102, 0.607);
+    border: 2px;
+    border-color: black;
+    border-radius: 5%;
+}
+.div-encabezado .E2{
+    background-color: rgba(179, 179, 172, 0.679);
+    border: 2px;
+    border-color: black;
+    border-radius: 5%;
+}
+.div-encabezado .E3{
+    background-color: rgba(81, 85, 90, 0.679);
+    border: 2px;
+    border-color: black;
+    border-radius: 5%;
+}
+
+
+.div-table {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.table-content {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.table-content th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+}
+.table-content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 17px;
+    text-align: left;
+}
+tbody .calificacion-m{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.table-content th {
+    background-color: #f2f2f2;
+    height: 40px; 
+}
+
+
+
+.div-footer{
+    margin-top: 2px;
+    display: flex;
+    align-items: first baseline;
+    justify-content: space-around;
+    padding-top: 50px;
+
+}
+.head-footer{
+    color: rgb(232, 232, 18);
+    margin: 0;
+    font-size: 50px;
+}
+.link-footer{
+    margin: 50px;
+}
+.link-footer a{
+    text-decoration: none;
+    color: aliceblue;
+    margin-left: 50px;
+}
+.link-footer p{
+    color: aliceblue;
+    margin-left: 50px;
+}
