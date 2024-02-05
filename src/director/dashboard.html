@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Director</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="/Primaria/node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="barra-lateral">
+            <legend>Dashboard</legend>
+            <ul>
+                <li><button onclick="options(1)">Ciclo Escolar</button></li>
+                <li class="ciclo-dropdown">
+                    <button onclick="$('#content').load('./componentes/html/crear_ciclo.html')">
+                        Crear ciclo
+                    </button>
+                </li>
+                <li class="ciclo-dropdown">
+                    <button onclick="">
+                        Ver ciclos
+                    </button>
+                </li>
+                <hr>
+                <li><button onclick="options(2)">Maestros</button></li>
+                <li class="maestro-dropdown">
+                    <button onclick="">
+                        Registrar Maestro
+                    </button>
+                </li>
+                <li class="maestro-dropdown">
+                    <button onclick="">
+                        Ver Maestros
+                    </button>
+                </li>
+                <hr>
+                <li><button onclick="options(3)">Alumnos</button></li>
+                <li class="alumno-dropdown">
+                    <button onclick="">
+                        Ver alumnos
+                    </button>
+                </li>
+                <li class="alumno-dropdown">
+                    <button onclick="">
+                        Ver ciclos
+                    </button>
+                </li>
+                <hr>
+                <li><button onclick="options(4)">Materias</button></li>
+                <li class="materias-dropdown">
+                    <button onclick="">Materias</button>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+
+        </div>
+    </div>
+
+    <script src="./dashboard.js"></script>
+    <script src="./componentes/js/crear_ciclo.js"></script>
+</body>
+
+</html>

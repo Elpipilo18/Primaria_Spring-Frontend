@@ -1,0 +1,51 @@
+/*estilos de los componentes*/
+@import url("./componentes/css/crear_ciclo.css");
+@import url("/Primaria/node_modules/bootstrap-icons/font/bootstrap-icons.min.css");
+
+/*estilos del dashboard*/
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+
+    & .barra-lateral{
+        background-color: white;
+        color: black;
+
+        & legend {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            background-color: lightblue;
+            padding: 10px;
+        }
+        & button{
+            background: none;
+            border: none;
+
+        }
+        .ciclo-dropdown, 
+        .maestro-dropdown, 
+        .alumno-dropdown, 
+        .materias-dropdown{
+            display: none;
+            margin-left: 10px;
+        }
+    }
+
+    & #content{
+        color: white;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+}
