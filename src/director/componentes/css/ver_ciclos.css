@@ -1,0 +1,61 @@
+.title{
+    background-color: lightblue;
+    height: fit-content;
+    width: 100%;
+}
+
+.ciclos-container{
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+
+.indice{
+    
+    & .info{
+        display: flex;
+        align-items: center;
+        
+        & .inicio{
+            text-align: center;
+            flex-grow: 1;
+            border-right: 1px solid ;
+            margin: 5px;
+        }
+        & .fin{
+            text-align: center;
+            flex-grow: 1;
+            border-right: 1px solid ;
+            margin: 5px;
+        }
+        & .acciones{
+            text-align: center;
+            flex-grow: 1;
+            border-right: 1px solid ;
+
+            & button{
+                padding: 5px;
+                border: none;
+                background-color: lightblue;
+                margin: 5px;
+            }
+        }
+    }
+
+    & #grados-container{
+        display: none;
+        justify-content: space-between;
+        transition: .5s ease-in-out;
+
+        & button{
+            padding: 0px 15px;
+            background-color: lightblue;
+            border: 1px solid rgb(71, 126, 145);
+            margin: 5px; 
+        }
+    }
+
+    & #grupos-container{
+        display: none;
+    }
+}

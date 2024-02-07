@@ -1,7 +1,7 @@
 function toggleDropdown(className) {
     const contedores = document.querySelectorAll(className);
     contedores.forEach(element => {
-        element.style.display = (element.style.display === 'none') ? 'block' : 'none';
+        element.style.display = (element.style.display === '') ? 'block' : '';
     });
 }
 

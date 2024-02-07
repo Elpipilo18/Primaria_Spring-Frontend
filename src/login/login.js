@@ -39,7 +39,7 @@ if (clave) {
         if (!checkNumbers) alert("La contraseña debe incluir numeros");
         if (!checkCapitals) alert("La contraseña debe incluir mayusculas");
 
-        if(checkCapitals && checkNumbers) {
+        if (checkCapitals && checkNumbers) {
             const boton = document.getElementById('btn-registrar');
             boton.addEventListener('click', () => {
                 registro();
@@ -58,9 +58,11 @@ function registro() {
     var apM = document.getElementById('apellidoM').value;
     var email = document.getElementById('correo').value;
     var key = document.getElementById('clave').value;
+    var user = document.getElementById('nick').value;
 
     var datos = {
         nombre: name,
+        nick: user,
         apellidoP: apP,
         apellidoM: apM,
         correo: email,
@@ -85,7 +87,7 @@ function registro() {
 
 }
 
-function login(){
+function login() {
     var backend = 'http://127.0.0.1:3030/auth';
 
     var user = document.getElementById('user-login').value;
@@ -98,19 +100,37 @@ function login(){
 
     $.ajax({
         url: backend + '/login',
-        type: 'POST',
-        dataType: 'json',
+        method: 'POST', 
         data: JSON.stringify(datos),
         contentType: 'application/json',
         success: function (credenciales) {
-                window.sessionStorage("usuario", credenciales.nick);
-                console.log(sessionStorage.getItem("usuario"));
-        },
-        error: function (response) {
-            alert(response)
+            console.log(credenciales);
+            if(credenciales.ruta === "admin.html"){
+                location.href = "../director/dashboard.html";
+            }
+            else if(credenciales.ruta === "alumno.html"){
+                location.href = "../directors/directors.html";
+            }
         }
     });
 
 }
+
+function Estado(){
+    var backend = 'http://127.0.0.1:3030/auth';
+
+    $.ajax({
+        url: backend + '/estado',
+        method: 'POST', 
+        contentType: 'application/json',
+        success: function (estado) {
+            console.log("Estado Sesion: " + estado);
+        }
+    });
+}
+
+$(function(){
+    Estado();
+})
 
 

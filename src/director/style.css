@@ -1,5 +1,6 @@
 /*estilos de los componentes*/
 @import url("./componentes/css/crear_ciclo.css");
+@import url("./componentes/css/ver_ciclos.css");
 @import url("/Primaria/node_modules/bootstrap-icons/font/bootstrap-icons.min.css");
 
 /*estilos del dashboard*/
@@ -44,8 +45,10 @@
 
     & #content{
         color: white;
-        display: grid;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        margin: 20px;
     }
 }

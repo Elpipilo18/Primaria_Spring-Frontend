@@ -21,7 +21,7 @@
                     </button>
                 </li>
                 <li class="ciclo-dropdown">
-                    <button onclick="">
+                    <button onclick="$('#content').load('./componentes/html/ver_ciclos.html')">
                         Ver ciclos
                     </button>
                 </li>
@@ -57,12 +57,45 @@
             </ul>
         </div>
         <div id="content">
-
+            <div class="title">
+                <h3>Ciclos Escolares</h3>
+            </div>
+            <div class="ciclos-container">
+                <div class="indice">
+                    <div class="info">
+                        <div class="inicio">
+                            <span>2024</span>
+                        </div>
+                        <div class="fin">
+                            <span>2025</span>
+                        </div>
+                        <div class="acciones">
+                            <button onclick="ShowGrados()">Grados</button>
+                        </div>
+                    </div>
+                    <div id="grados-container"> 
+                        <button onclick="verGrupos()">Primero</button>
+                        <button onclick="verGrupos()">Segundo</button>
+                        <button onclick="verGrupos()">Tercero</button>
+                        <button onclick="verGrupos()">Cuarto</button>
+                        <button onclick="verGrupos()">Quinto</button>
+                        <button onclick="verGrupos()">Sexto</button>
+                    </div>
+                    <div id="grupos-container">
+                        <ul>
+                            <li><a href="">A</a></li>
+                            <li><a href="">B</a></li>
+                            <li><a href="">C</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="./dashboard.js"></script>
     <script src="./componentes/js/crear_ciclo.js"></script>
+    <script src="./componentes/js/ver_ciclos.js"></script>
 </body>
 
 </html>
