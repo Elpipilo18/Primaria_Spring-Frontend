@@ -109,7 +109,7 @@ function login() {
                 location.href = "../director/dashboard.html";
             }
             else if(credenciales.ruta === "alumno.html"){
-                location.href = "../directors/directors.html";
+                location.href = "../alumno/Alumno_int.html";
             }
         }
     });
