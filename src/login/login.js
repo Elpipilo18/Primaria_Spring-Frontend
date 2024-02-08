@@ -105,12 +105,7 @@ function login() {
         contentType: 'application/json',
         success: function (credenciales) {
             console.log(credenciales);
-            if(credenciales.ruta === "admin.html"){
-                location.href = "../director/dashboard.html";
-            }
-            else if(credenciales.ruta === "alumno.html"){
-                location.href = "../alumno/Alumno_int.html";
-            }
+            location.href = credenciales.ruta;
         }
     });
 

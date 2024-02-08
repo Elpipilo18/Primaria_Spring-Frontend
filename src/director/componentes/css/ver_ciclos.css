@@ -55,7 +55,7 @@
         }
     }
 
-    & #grupos-container{
+    .indice:nth-child(2){
         display: none;
     }
 }

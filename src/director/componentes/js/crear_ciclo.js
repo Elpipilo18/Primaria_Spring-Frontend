@@ -9,14 +9,15 @@ function CrearCiclo(){
         fin: fin,
         status: 1,
     }
+    
     $.ajax({
         url: backend + "/nuevoCicloEscolar",
-        type: "POST",
+        method: "POST",
         data: JSON.stringify(json),
-        dataType: 'json',
         contentType: 'application/json',
         success: function(data){
             console.log(data);
+            alert(data)
         }
     })
 }
