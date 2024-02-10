@@ -23,3 +23,16 @@ function options(index) {
             break;
     }
 }
+
+
+$(function Rowscolor() {
+    let rows = document.querySelectorAll('#tr-body');
+
+    rows.forEach((row, index) => {
+        if (index % 2 == 0) {
+            row.style.backgroundColor = 'lightblue';
+        } else {
+                row.style.backgroundColor = 'white';
+        }
+    });
+});

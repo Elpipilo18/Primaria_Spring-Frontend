@@ -1,5 +1,5 @@
 //validar longitud del usuario
-const user = document.getElementById('nickname');
+const user = document.getElementById('nick');
 if (user) {
     user.addEventListener('change', () => {
         //validar longitud
@@ -36,10 +36,12 @@ if (clave) {
                 }
             }
         }
-        if (!checkNumbers) alert("La contraseña debe incluir numeros");
-        if (!checkCapitals) alert("La contraseña debe incluir mayusculas");
+        if (!checkNumbers) document.getElementById("error-num").innerHTML = "La contraseña debe incluir numeros";
+        if (!checkCapitals) document.getElementById("error-cap").innerHTML = "La contraseña debe incluir mayusculas";
 
         if (checkCapitals && checkNumbers) {
+            document.getElementById("error-num").innerHTML = " ";
+            document.getElementById("error-cap").innerHTML = " ";
             const boton = document.getElementById('btn-registrar');
             boton.addEventListener('click', () => {
                 registro();
@@ -52,14 +54,12 @@ if (clave) {
 //peticion para registrar usuario
 function registro() {
     var backend = 'http://127.0.0.1:3030/auth';
-
     var name = document.getElementById('nombre').value;
     var apP = document.getElementById('apellidoP').value;
     var apM = document.getElementById('apellidoM').value;
     var email = document.getElementById('correo').value;
     var key = document.getElementById('clave').value;
     var user = document.getElementById('nick').value;
-
     var datos = {
         nombre: name,
         nick: user,
@@ -68,11 +68,7 @@ function registro() {
         correo: email,
         clave: key
     };
-
     var nuevoUsuario = JSON.stringify(datos);
-
-    console.log(nuevoUsuario)
-
     $.ajax({
         url: backend + '/registro',
         type: 'POST',
@@ -82,12 +78,39 @@ function registro() {
         xhrFields: { withCredentials: true },
         success: function (serverResponse) {
             console.log("mensaje: " + serverResponse)
+            const form = document.getElementById('sign-form');
+            const form2 = document.getElementById('login-form');
+            if (form.style.top === '0px' && form.style.opacity === '1') {
+                form.style.top = '-690px';
+                form.style.opacity = '0';
+                form2.style.top = '40px';
+                form2.style.left = '-250px';
+            }
+            form.style.transitionDuration = '.5s';
+            form2.style.transitionDuration = '.5s';
         }
     });
-
 }
 
-function login() {
+document.getElementById('show-sign-form').addEventListener('click', () => {
+    const form = document.getElementById('sign-form');
+    const form2 = document.getElementById('login-form');
+    if (form.style.top !== '0px' && form2.style.opacity !== '1') {
+        form.style.top = '0px';
+        form.style.opacity = '1';
+        form2.style.top = '0px';
+        form2.style.left = '0px';
+    } else {
+        form.style.top = '-690px';
+        form.style.opacity = '0';
+        form2.style.top = '40px';
+        form2.style.left = '-250px';
+    }
+    form.style.transitionDuration = '.5s';
+    form2.style.transitionDuration = '.5s';
+});
+
+document.getElementById("btn-login").addEventListener('click', () => {
     var backend = 'http://127.0.0.1:3030/auth';
 
     var user = document.getElementById('user-login').value;
@@ -100,7 +123,7 @@ function login() {
 
     $.ajax({
         url: backend + '/login',
-        method: 'POST', 
+        method: 'POST',
         data: JSON.stringify(datos),
         contentType: 'application/json',
         success: function (credenciales) {
@@ -109,14 +132,15 @@ function login() {
         }
     });
 
-}
 
-function Estado(){
+});
+
+function Estado() {
     var backend = 'http://127.0.0.1:3030/auth';
 
     $.ajax({
         url: backend + '/estado',
-        method: 'POST', 
+        method: 'POST',
         contentType: 'application/json',
         success: function (estado) {
             console.log("Estado Sesion: " + estado);
@@ -124,7 +148,8 @@ function Estado(){
     });
 }
 
-$(function(){
+
+$(function () {
     Estado();
 })
 
