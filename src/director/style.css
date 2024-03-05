@@ -1,6 +1,9 @@
 /*estilos de los componentes*/
 @import url("./componentes/css/crear_ciclo.css");
 @import url("./componentes/css/ver_ciclos.css");
+@import url("./componentes/css/crear_maestro.css");
+@import url("./componentes/css/crear_grupo.css");
+
 /*estilos del dashboard*/
 
 *{
@@ -32,12 +35,13 @@
             border: none;
 
         }
-        .ciclo-dropdown, 
-        .maestro-dropdown, 
-        .alumno-dropdown, 
-        .materias-dropdown{
+        .ciclo-dropdown,
+        .maestro-dropdown,
+        .alumno-dropdown,
+        .materia-dropdown,
+        .grupo-dropdown{
             display: none;
-            margin-left: 10px;
+            margin-left: 20px;
         }
     }
 

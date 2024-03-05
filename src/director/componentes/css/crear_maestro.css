@@ -1,0 +1,41 @@
+.form-maestro {
+    display: grid;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 3px 5px 3px gray;
+    margin: 10px;
+    gap: 20px;
+    max-width: 100%;
+
+    & h2 {
+        max-width: 100%;
+        background-color: lightblue;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    & input {
+        height: 40px;
+        background-color: rgb(215, 232, 238);
+        border-radius: 5px;
+        border: none;
+        text-indent: 10px;
+        cursor: text;
+        width: 100%;
+    }
+
+    & input:focus {
+        outline-color: rgb(19, 143, 201);
+    }
+
+    & button {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: lightblue;
+        width: max-content;
+        cursor: pointer;
+    }
+}   

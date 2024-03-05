@@ -1,0 +1,53 @@
+.crear-grupo-main {
+    background-color: whitesmoke;
+    display: grid;
+    padding: 20px 10px;
+    gap: 15px;
+    border-radius: 10px;
+
+    & .crear-grupo-title {
+        background-color: lightblue;
+        border-style: hidden;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    & .crear-grupo-form {
+        display: grid;
+        gap: 10px;
+
+        & input:nth-child(1) {
+            cursor: text;
+        }
+
+        & input,
+        select {
+            padding: 10px;
+            border: hidden;
+            height: 40px;
+            background-color: rgb(215, 232, 238);
+            border-radius: 5px;
+            border: none;
+            text-indent: 10px;
+            cursor: pointer;
+        }
+
+        & input::placeholder {
+            color: black;
+        }
+
+        & input:focus {
+            outline-color: lightblue;
+        }
+
+        & button {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: lightblue;
+            width: max-content;
+        }
+
+
+    }
+}

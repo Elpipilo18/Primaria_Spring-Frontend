@@ -17,7 +17,10 @@ function options(index) {
             toggleDropdown('.alumno-dropdown');
             break;
         case 4:
-            toggleDropdown('.materias-dropdown');
+            toggleDropdown('.grupo-dropdown');
+            break;
+        case 5:
+            toggleDropdown('.materia-dropdown');
             break;
         default:
             break;
@@ -32,7 +35,47 @@ $(function Rowscolor() {
         if (index % 2 == 0) {
             row.style.backgroundColor = 'lightblue';
         } else {
-                row.style.backgroundColor = 'white';
+            row.style.backgroundColor = 'white';
         }
     });
 });
+
+var backend = 'http://127.0.0.1:3030';
+
+function Estado() {
+    $.ajax({
+        url: backend + '/auth/estado',
+        method: 'POST',
+        contentType: 'application/json',
+        xhrFields: { withCredentials: true },
+        success: function (estado) {
+            console.log("Estado Sesion: ");
+            if (estado.accesoCorrecto) {
+                console.log("Sesion iniciada")
+                console.log(estado);
+            } else {
+                console.log("Sin sesion")
+                console.log(estado);
+                location.href = "../login/login.html";
+            }
+        }
+    });
+}
+
+function Logout() {
+
+    $.ajax({
+        url: backend + '/auth/logout',
+        method: 'POST',
+        contentType: 'application/json',
+        xhrFields: { withCredentials: true },
+        success: function () {
+            location.reload();
+        }
+    });
+}
+
+
+$(function () {
+    Estado();
+})

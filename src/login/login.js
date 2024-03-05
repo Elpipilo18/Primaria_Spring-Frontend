@@ -53,7 +53,8 @@ if (clave) {
 
 //peticion para registrar usuario
 function registro() {
-    var backend = 'http://127.0.0.1:3030/auth';
+    let backend = 'http://127.0.0.1:3030/usuario';
+
     var name = document.getElementById('nombre').value;
     var apP = document.getElementById('apellidoP').value;
     var apM = document.getElementById('apellidoM').value;
@@ -71,11 +72,11 @@ function registro() {
     var nuevoUsuario = JSON.stringify(datos);
     $.ajax({
         url: backend + '/registro',
-        type: 'POST',
+        method: 'POST',
         dataType: 'json',
         data: nuevoUsuario,
         contentType: 'application/json',
-        xhrFields: { withCredentials: true },
+
         success: function (serverResponse) {
             console.log("mensaje: " + serverResponse)
             const form = document.getElementById('sign-form');
@@ -126,6 +127,7 @@ document.getElementById("btn-login").addEventListener('click', () => {
         method: 'POST',
         data: JSON.stringify(datos),
         contentType: 'application/json',
+        xhrFields: { withCredentials: true },
         success: function (credenciales) {
             console.log(credenciales);
             location.href = credenciales.ruta;
@@ -142,8 +144,15 @@ function Estado() {
         url: backend + '/estado',
         method: 'POST',
         contentType: 'application/json',
+        xhrFields: { withCredentials: true },
         success: function (estado) {
-            console.log("Estado Sesion: " + estado);
+            console.log("Estado Sesion: ");
+            if (estado.accesoCorrecto) {
+                console.log("Sesion iniciada")
+                location.href = estado.ruta;
+            } else {
+                console.log("Sin sesion")
+            }
         }
     });
 }
