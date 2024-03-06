@@ -1,3 +1,5 @@
+var backend = 'http://127.0.0.1:3030';
+
 //validar longitud del usuario
 const user = document.getElementById('nick');
 if (user) {
@@ -53,42 +55,38 @@ if (clave) {
 
 //peticion para registrar usuario
 function registro() {
-    let backend = 'http://127.0.0.1:3030/usuario';
 
-    var name = document.getElementById('nombre').value;
-    var apP = document.getElementById('apellidoP').value;
-    var apM = document.getElementById('apellidoM').value;
-    var email = document.getElementById('correo').value;
-    var key = document.getElementById('clave').value;
-    var user = document.getElementById('nick').value;
-    var datos = {
+    let name = document.getElementById('nombre').value;
+    let apP = document.getElementById('apellidoP').value;
+    let apM = document.getElementById('apellidoM').value;
+    let email = document.getElementById('correo').value;
+    let key = document.getElementById('clave').value;
+    let user = document.getElementById('nick').value;
+
+    const datos = {
         nombre: name,
         nick: user,
         apellidoP: apP,
         apellidoM: apM,
         correo: email,
-        clave: key
+        clave: key,
+        status: 1,
+        rol: {
+            id: 1
+        }
     };
-    var nuevoUsuario = JSON.stringify(datos);
+
+    let nuevoUsuario = JSON.stringify(datos);
+
     $.ajax({
-        url: backend + '/registro',
+        url: backend + '/usuario/registro',
         method: 'POST',
-        dataType: 'json',
         data: nuevoUsuario,
         contentType: 'application/json',
-
+        
         success: function (serverResponse) {
-            console.log("mensaje: " + serverResponse)
-            const form = document.getElementById('sign-form');
-            const form2 = document.getElementById('login-form');
-            if (form.style.top === '0px' && form.style.opacity === '1') {
-                form.style.top = '-690px';
-                form.style.opacity = '0';
-                form2.style.top = '40px';
-                form2.style.left = '-250px';
-            }
-            form.style.transitionDuration = '.5s';
-            form2.style.transitionDuration = '.5s';
+            console.log(serverResponse);
+            fadeform();
         }
     });
 }
@@ -112,7 +110,6 @@ document.getElementById('show-sign-form').addEventListener('click', () => {
 });
 
 document.getElementById("btn-login").addEventListener('click', () => {
-    var backend = 'http://127.0.0.1:3030/auth';
 
     var user = document.getElementById('user-login').value;
     var key = document.getElementById('clave-login').value;
@@ -123,7 +120,7 @@ document.getElementById("btn-login").addEventListener('click', () => {
     };
 
     $.ajax({
-        url: backend + '/login',
+        url: backend + '/auth/login',
         method: 'POST',
         data: JSON.stringify(datos),
         contentType: 'application/json',
@@ -137,11 +134,22 @@ document.getElementById("btn-login").addEventListener('click', () => {
 
 });
 
-function Estado() {
-    var backend = 'http://127.0.0.1:3030/auth';
+function fadeform() {
+    const form = document.getElementById('sign-form');
+    const form2 = document.getElementById('login-form');
+    if (form.style.top === '0px' && form.style.opacity === '1') {
+        form.style.top = '-690px';
+        form.style.opacity = '0';
+        form2.style.top = '40px';
+        form2.style.left = '-250px';
+    }
+    form.style.transitionDuration = '.5s';
+    form2.style.transitionDuration = '.5s';
+}
 
+function Estado() {
     $.ajax({
-        url: backend + '/estado',
+        url: backend + '/auth/estado',
         method: 'POST',
         contentType: 'application/json',
         xhrFields: { withCredentials: true },
