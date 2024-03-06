@@ -3,6 +3,8 @@
 @import url("./componentes/css/ver_ciclos.css");
 @import url("./componentes/css/crear_maestro.css");
 @import url("./componentes/css/crear_grupo.css");
+@import url("./componentes/css/ver_profes.css");
+
 
 /*estilos del dashboard*/
 
@@ -55,26 +57,3 @@
     }
 }
 
-.tabla-profes{
-    background-color: white;
-    border-radius: 10px;
-    border: 2px solid white;
-
-    & thead{
-        background-color: black;
-        font-size: 20px;
-
-        & th{
-            border: none;
-            padding: 10px;
-        }
-    }
-
-    & tbody{
-        color: black;
-
-        & th{
-            padding: 10px;
-        }
-    }
-}

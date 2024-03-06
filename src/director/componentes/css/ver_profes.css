@@ -1,0 +1,27 @@
+.tabla-profes{
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+
+    & thead{
+        background-color: black;
+        font-size: 20px;
+
+        & th{
+            border: none;
+            padding: 10px;
+        }
+    }
+
+    & tbody{
+        color: black;
+
+        & td{
+            padding: 10px;
+        }
+
+        & tr:nth-child(odd){
+            background-color: gray;
+        }
+    }
+}

@@ -85,8 +85,8 @@ function registro() {
         contentType: 'application/json',
         
         success: function (serverResponse) {
-            console.log(serverResponse);
-            fadeform();
+            alert(serverResponse)
+            Fadeform();
         }
     });
 }
@@ -134,7 +134,7 @@ document.getElementById("btn-login").addEventListener('click', () => {
 
 });
 
-function fadeform() {
+function Fadeform() {
     const form = document.getElementById('sign-form');
     const form2 = document.getElementById('login-form');
     if (form.style.top === '0px' && form.style.opacity === '1') {
