@@ -1,13 +1,6 @@
-/*estilos de los componentes*/
-@import url("./componentes/css/crear_ciclo.css");
-@import url("./componentes/css/ver_ciclos.css");
-@import url("./componentes/css/crear_maestro.css");
-@import url("./componentes/css/crear_grupo.css");
-@import url("./componentes/css/ver_profes.css");
-@import url("./componentes/css/ver_alumnos.css");
 
+@import url("./componentes_profesor/css/ver_alumnos.css");
 
-/*estilos del dashboard*/
 
 *{
     padding: 0%;
@@ -21,6 +14,7 @@
     height: 100vh;
     width: 100%;
     background-color: black;
+    
 
     & .barra-lateral{
         background-color: white;
@@ -38,13 +32,12 @@
             border: none;
 
         }
-        .ciclo-dropdown,
-        .maestro-dropdown,
-        .alumno-dropdown,
         .materia-dropdown,
-        .grupo-dropdown{
+        .alumno-dropdown{
             display: none;
             margin-left: 20px;
+            
+            
         }
     }
 

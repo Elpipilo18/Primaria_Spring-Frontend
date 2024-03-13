@@ -1,4 +1,4 @@
-.tabla-profes{
+.tabla{
     background-color: white;
     border-radius: 10px;
     border: 2px solid white;
@@ -23,9 +23,13 @@
         & tr:nth-child(odd){
             background-color: gray;
         }
-
-        & #fila > button {
-            padding: 10px;
-        }
     }
+}
+.btn{
+    width: 60px;
+    height: 30px;
+
+}
+td i{
+    font-size: 30px; 
 }

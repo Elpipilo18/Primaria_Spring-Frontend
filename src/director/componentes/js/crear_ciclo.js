@@ -15,6 +15,7 @@ function CrearCiclo(){
         method: "POST",
         data: JSON.stringify(json),
         contentType: 'application/json',
+        xhrFields: { withCredentials: true },
         success: function(data){
             console.log(data);
             alert(data)

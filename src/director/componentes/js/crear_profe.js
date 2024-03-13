@@ -1,4 +1,6 @@
 function RegistrarProfesor(){
+
+    let backend = 'http://localhost:3030'
     
     const json = {
         nombre: document.getElementById('nombre').value,
@@ -11,8 +13,8 @@ function RegistrarProfesor(){
     const nuevoUsuario = JSON.stringify(json);
 
     $.ajax({
-        url: backend + "/nuevoUsuario",
-        type: "POST",
+        url: backend + "/profesor/registrar",
+        method: "POST",
         data: nuevoUsuario,
         contentType: 'application/json',
         xhrFields: { withCredentials: true },

@@ -11,26 +11,27 @@ document.getElementById("ver-profes").addEventListener("click", () => {
         xhrFields: { withCredentials: true },
         success: function (res) {
             console.log(res)
-            MostrarProfes(res); 
+            MostrarProfes(res);
         }
     })
 })
 
 function MostrarProfes(lista) {
     let tablaBody = document.getElementById('tabla-profes');
-    tablaBody.innerHTML = '';
-    for (let profe of lista) {
-        tablaBody.innerHTML +=
-        `
-        <tr id='fila'>
-            <td>${profe.nombre}</td>
-            <td>${profe.apellidoPaterno + " "+ profe.apellidoMaterno}</td>
-            <td>${profe.correo}</td>
-            <td>${profe.curp}</td>
-            <td><button>Editar</button></td>
-            <td><button>Eliminar</button></td>
-        </tr>
-        `
-
+    if (tablaBody) {
+        tablaBody.innerHTML = '';
+        for (let profe of lista) {
+            tablaBody.innerHTML +=
+                `
+            <tr id='fila'>
+                <td>${profe.nombre}</td>
+                <td>${profe.apellidoPaterno + " " + profe.apellidoMaterno}</td>
+                <td>${profe.correo}</td>
+                <td>${profe.curp}</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+            `
+        }
     }
 }
