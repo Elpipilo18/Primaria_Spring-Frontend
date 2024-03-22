@@ -4,31 +4,41 @@ document.getElementById("ver-alumnos").addEventListener("click", () => {
     $('#content').load('./componentes_profesor/html/ver_alumnos.html');
 
     $.ajax({
-        url: backend + '/alumnos/ListarAlumnos',
+        url: backend + '/inscrito/verMisAlumnos',
         method: 'GET',
         dataType: "json",
         contentType: 'application/json',
         xhrFields: { withCredentials: true },
         success: function (res) {
             console.log(res)
-            MostrarAlumnos(res); 
+            let grupo = res[0].grupo.nombre;
+            console.log(grupo);
+            MostrarAlumnos(res, grupo);
         }
     })
 })
 
-function MostrarAlumnos(lista) {
+function MostrarAlumnos(lista, nombre_grupo) {
+    let cajatitulo = document.getElementById('nombreGrupo');
+    if (cajatitulo) {
+        let titulo = document.createElement('h3');
+        titulo.innerHTML = "Grupo : "+nombre_grupo;
+        cajatitulo.appendChild(titulo);
+    }
     let tablaBody = document.getElementById('tabla-alumnos');
     tablaBody.innerHTML = '';
-    for (let alumno of lista) {
+    for (let inscrito of lista) {
         tablaBody.innerHTML +=
-        `
+            `
         <tr id='fila'>
-            <td>${alumno.nombre}</td>
-            <td>${alumno.apellidoPaterno + " "+ alumno.apellidoMaterno}</td>
-            <td>${alumno.telefono}</td>
-            <td>${alumno.curp}</td>
-            <td><i class="bi bi-pencil-square"></i></td>
-            <td><i class="bi bi-trash"></i></td>
+            <td>${inscrito.alumno.nombre}</td>
+            <td>${inscrito.alumno.apellidoPaterno}</td>
+            <td>${inscrito.alumno.apellidoMaterno}</td>
+            <td>${inscrito.alumno.curp}</td>
+            <td>${inscrito.alumno.telefono}</td>
+            <td>${inscrito.alumno.estadoCadena}</td>
+            <td>${(inscrito.alumno.estado != 1) ? `Evaluado` : `<button onclick="getInfoAlumno(${inscrito.id})">Evaluar</button>`}</td>
+            <td>${(inscrito.alumno.estado != 1) ? `<button onclick="verCalificaciones(${inscrito.id})">Ver calificaciones</button>` : ``}</td>
         </tr>
         `
 

@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Profesor</title>
     <link rel="stylesheet" href="style_dashboard_prof.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">-->
     <script src="../js/jquery-3.7.1.js"></script>
-  
-
 </head>
+
 <body>
     <div class="container">
         <div class="barra-lateral">
             <legend>Profesor</legend>
             <legend id="admin-nick"> </legend>
             <ul>
-                
+
                 <li><i class="bi bi-person-vcard-fill"></i><button onclick="options(1)">Alumnos</button></li>
                 <li class="alumno-dropdown">
-                    <button id="ver-alumnos" >
+                    <button id="ver-alumnos">
                         Ver alumnos
                     </button>
                 </li>
-                
+
                 <hr>
+
                 <li><i class="bi bi-journal-richtext"></i><button onclick="options(2)">Materias</button></li>
                 <li class="materia-dropdown">
                     <button onclick="">Materias</button>
                 </li>
             </ul>
+
+            <hr>
+
             <div class="btn-logout">
                 <button onclick="Logout()">Cerrar Sesion</button>
             </div>
         </div>
         <div id="content">
-            
+
         </div>
     </div>
-
-
     <script src="./dashboard_profesor.js"></script>
     <script src="./componentes_profesor/js/ver_alumnos.js"></script>
-
-
+    <script src="./componentes_profesor/js/calificar_alumno.js"></script>
+    <script src="./componentes_profesor/js/ver_calificaciones.js"></script>
 </body>
+
 </html>

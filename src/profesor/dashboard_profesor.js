@@ -17,19 +17,6 @@ function options(index) {
     }
 }
 
-
-$(function Rowscolor() {
-    let rows = document.querySelectorAll('#tr-body');
-
-    rows.forEach((row, index) => {
-        if (index % 2 == 0) {
-            row.style.backgroundColor = 'lightblue';
-        } else {
-            row.style.backgroundColor = 'white';
-        }
-    });
-});
-
 var backend = 'http://127.0.0.1:3030';
 
 function Estado() {

@@ -1,0 +1,57 @@
+.alumno-info {
+    display: grid;
+    background-color: rgb(195, 216, 235);
+    padding: 50px;
+    gap: 10px;
+
+
+
+    & input{
+        padding: 10px;
+        border-radius: 10px;
+        border-color: #c9c9c9;
+    }
+
+    & label{
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}
+
+.cal-alu-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    background-color: beige;
+    padding: 10px;
+
+    & h5{
+        color: black;
+    }
+
+    & label{
+        color: black;
+    }
+}
+
+.calificaciones{
+    display: grid;
+    
+    & table{
+        background-color: #c9c9c9;
+    }
+}
+
+#formCals{
+    display: grid;
+    background-color: beige;
+    gap: 5px;
+    justify-content: center;
+
+    & input{
+        padding: 5px;
+        border-radius: 5px;
+        border-color: #c9c9c9;
+        width: fit-content;
+    }
+}

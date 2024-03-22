@@ -1,0 +1,35 @@
+.card{
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: 120px;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 1px white;
+    color: #000;
+}
+
+#informacion{
+    display: grid;
+    gap: 5px;
+}
+#calificaciones-alumno{
+    display: grid;
+    gap: 10px;
+}
+#indiceMateria:nth-child(1){
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+
+}
+
+#indiceMateria{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: aquamarine;
+}

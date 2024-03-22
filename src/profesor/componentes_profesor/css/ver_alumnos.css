@@ -1,35 +1,46 @@
-.tabla-alumnos{
+#nombreGrupo{
+    background-color: lightblue;
+    padding: 20px;
+    margin-bottom: 20px;
+    & h3 {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.tabla-alumnos {
     background-color: white;
     border-radius: 10px;
     border: 2px solid white;
 
-    & thead{
+    & thead {
         background-color: black;
         font-size: 20px;
 
-        & th{
+        & th {
             border: none;
             padding: 10px;
         }
     }
 
-    & tbody{
+    & tbody {
         color: black;
 
-        & td{
+        & td {
             padding: 10px;
         }
 
-        & tr:nth-child(odd){
-            background-color: gray;
+        & tr:nth-child(odd) {
+            background-color: rgb(230, 230, 230);
         }
     }
 }
-.btn{
+
+.btn {
     width: 60px;
     height: 30px;
 
 }
-td i{
-    font-size: 30px; 
+
+td i {
+    font-size: 30px;
 }
