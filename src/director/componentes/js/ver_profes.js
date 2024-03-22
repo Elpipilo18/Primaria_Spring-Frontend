@@ -1,8 +1,8 @@
-document.getElementById("ver-profes").addEventListener("click", () => {
-    let backend = 'http://127.0.0.1:3030';
+$(function() {
+    VerProfes();
+})
 
-    $('#content').load('./componentes/html/ver_profes.html');
-
+function VerProfes() {
     $.ajax({
         url: backend + '/profesor/ListarProfesores',
         method: 'GET',
@@ -14,7 +14,7 @@ document.getElementById("ver-profes").addEventListener("click", () => {
             MostrarProfes(res);
         }
     })
-})
+}
 
 function MostrarProfes(lista) {
     let tablaBody = document.getElementById('tabla-profes');

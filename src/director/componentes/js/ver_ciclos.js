@@ -1,7 +1,4 @@
-document.getElementById("ver-ciclos").addEventListener("click", () => {
-
-    $("#content").load("./componentes/html/ver_ciclos.html");
-
+function VerCiclos(){
     let backend = 'http://127.0.0.1:3030/cicloEscolar';
 
     $.ajax({
@@ -34,5 +31,9 @@ document.getElementById("ver-ciclos").addEventListener("click", () => {
             }
         }
     })
-})
+}
 
+
+$(function() {
+    VerCiclos();
+})

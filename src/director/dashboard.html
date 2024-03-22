@@ -23,7 +23,8 @@
                     </button>
                 </li>
                 <li class="ciclo-dropdown">
-                    <button id="ver-ciclos">
+    
+                    <button id="ver-ciclos" onclick="$('#content').load('./componentes/html/ver_ciclos.html')">
                         Ver ciclos
                     </button>
                 </li>
@@ -35,14 +36,14 @@
                     </button>
                 </li>
                 <li class="maestro-dropdown">
-                    <button id="ver-profes">
+                    <button id="ver-profes" onclick="$('#content').load('./componentes/html/ver_profes.html')">
                         Ver Maestros
                     </button>
                 </li>
                 <hr>
                 <li><i class="bi bi-person-vcard-fill"></i><button onclick="options(3)">Alumnos</button></li>
                 <li class="alumno-dropdown">
-                    <button id="ver-alumnos">
+                    <button id="ver-alumnos" onclick="$('#content').load('./componentes/html/ver_alumnos.html')">
                         Ver alumnos
                     </button>
                 </li>
@@ -74,13 +75,6 @@
     </div>
 
     <script src="./dashboard.js"></script>
-    <script src="./componentes/js/crear_ciclo.js"></script>
-    <script src="./componentes/js/ver_ciclos.js"></script>
-    <script src="./componentes/js/ver_profes.js"></script>
-    <script src="./componentes/js/ver_alumnos.js"></script>
-    <script src="./componentes/js/crear_grupo.js"></script>
-
-
 </body>
 
 </html>
