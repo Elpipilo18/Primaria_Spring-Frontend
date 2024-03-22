@@ -14,13 +14,15 @@ function getGrades() {
 
 function mostrarMisCalificaciones(lista) {
     let tabla = document.getElementById("calContainer");
+    let promedio = 0;
     tabla.innerHTML = "";
 
     for (let calificacion of lista) {
+        promedio += parseFloat(calificacion.calificacion);
         let colorFondo;
-        if (calificacion.calificacion < 5) {
+        if (calificacion.calificacion <= 5) {
             colorFondo = "red";
-        } else if (calificacion.calificacion >= 5 && calificacion.calificacion < 8) {
+        } else if (calificacion.calificacion >= 6 && calificacion.calificacion < 8) {
             colorFondo = "yellow";
         } else {
             colorFondo = "green";
@@ -33,12 +35,19 @@ function mostrarMisCalificaciones(lista) {
         </div>
         `;
     }
+    promedio /= lista.length;
+    let promedioFinals = Math.round(promedio);
+    tabla.innerHTML += `
+        <div class="card" style="background-color: lightblue;">
+            <span><b>Promedio Obtenido:</b> ${promedioFinals}</span>
+        </div>
+    `;
 
     let eva = document.getElementById("Info");
     eva.innerHTML += `
         <span><b>${lista[0].evaluacion.nombre} Evaluación</b></span>
         <span><b>Grupo: </b> ${lista[0].inscrito.grupo.nombre}</span>
-        <span><b>Estado: </b> ${(lista[0].inscrito.alumno.estado == 2) ? `Aprobado` : `Reprobado`}</span>
+        <span><b>Estado: </b> ${(lista[0].inscrito.alumno.estado == 2) ? Aprobado : Reprobado}</span>
         <span><b>Profesor Encargado: </b>${lista[0].inscrito.grupo.profesor.nombre} ${lista[0].inscrito.grupo.profesor.apellidoPaterno} ${lista[0].inscrito.grupo.profesor.apellidoMaterno}</span>
     `;
 }
